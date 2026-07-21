@@ -2,9 +2,9 @@
 
 # [H1] Banquetería a fuego vivo para matrimonios, empresas y celebraciones
 
-Parrillas a la llama, cordero al palo y producción integral de eventos en la Región del Biobío y alrededores.
+Parrillas, cordero al palo y producción completa de eventos en la Región del Biobío y alrededores.
 
-Nos trasladamos hasta el lugar y coordinamos los servicios contratados para que no tengas que organizar cada proveedor por separado.
+Llegamos al lugar con todo lo necesario y coordinamos cada servicio para que tú solo te preocupes de disfrutar.
 
 **CTA principal:** Cotizar mi evento
 
@@ -16,28 +16,48 @@ Nos trasladamos hasta el lugar y coordinamos los servicios contratados para que 
 - Más de 8 años de experiencia
 - Propuestas personalizadas
 
-## [H2] Gastronomía a fuego vivo adaptada a tu evento
+## [H2] Cordero al palo preparado en el lugar del evento
 
-En Fuego de Patio cocinamos frente a tus invitados con fuego vivo y leña nativa. La preparación forma parte del evento y se complementa con un servicio organizado y una presentación cuidada.
+Cocción lenta con fuego vivo y leña nativa, a la vista de tus invitados. Nuestro equipo se encarga de todo: instalación, preparación y servicio en el lugar que elijas.
 
-Adaptamos la propuesta al lugar, al número de asistentes y al tipo de celebración. Puedes contratar solo la banquetería o sumar producción, mobiliario, iluminación, barra y animación.
+### [H3] Cómo preparamos el cordero al palo
+
+#### [H4] Cocción lenta con fuego vivo
+
+Horas de cocción con leña nativa y control constante de la temperatura.
+
+#### [H4] Preparación a la vista
+
+Los invitados pueden observar el proceso mientras participan de la celebración.
+
+#### [H4] Instalación y servicio completo
+
+Montamos, cocinamos, servimos y retiramos. Tú no necesitas coordinar nada.
+
+**CTA:** Cotizar cordero al palo
+
+**CTA secundario:** Más sobre el cordero al palo →
+
+## [H2] Cocinamos frente a tus invitados
+
+La parrilla a la vista es parte del evento. Puedes contratar solo la banquetería o sumar producción, mobiliario, iluminación, barra y animación.
 
 ### [H3] Razones para elegir Fuego de Patio
 
-- **Cocina a la vista:** la preparación con fuego vivo y leña nativa sucede frente a los invitados.
-- **Llegamos donde nos necesites:** trabajamos en parcelas, domicilios, empresas y centros de eventos del Biobío y sus alrededores.
-- **Propuestas adaptables:** ajustamos el menú, el servicio y el montaje a las características de tu evento.
-- **Servicios centralizados:** puedes sumar equipamiento y producción para coordinar menos proveedores.
+- **Cocina a la vista:** Tus invitados ven y huelen la preparación mientras disfrutan del evento.
+- **Llegamos donde nos necesites:** Parcelas, domicilios, empresas o centros de eventos en todo el Biobío.
+- **Propuestas a medida:** Menú, formato y montaje ajustados al espacio, cantidad de personas y estilo de tu evento.
+- **Un solo proveedor:** Sumá equipamiento, barra y producción sin sumar proveedores adicionales.
 
 **CTA:** Quiero recibir una propuesta
 
 ## [H2] Propuestas gastronómicas
 
-Te ayudamos a elegir un formato según el tipo de evento, el espacio disponible y la cantidad de invitados.
+Cuatro formatos distintos para que elijas el que mejor calce con tu celebración.
 
 ### [H3] Buffet del Asador
 
-Una propuesta abundante y variada, con distintos cortes de carne preparados a la parrilla y a la llama de leña nativa. Incluye alternativas de acompañamientos calientes, ensaladas, postres y barra según la configuración elegida.
+Distintos cortes a la parrilla con acompañamientos calientes, ensaladas, postres y barra. El formato más completo.
 
 #### [H4] Recomendado para
 
@@ -57,7 +77,7 @@ Cumpleaños, aniversarios, reuniones familiares y celebraciones relajadas.
 
 ### [H3] Cóctel Extendido
 
-Una selección de bocados para eventos de pie, con un servicio ágil y una presentación cuidada. Su formato facilita la circulación y la conversación entre los invitados.
+Bocados servidos de pie con servicio ágil. Ideal cuando los invitados circulan y conversan.
 
 #### [H4] Recomendado para
 
@@ -67,43 +87,19 @@ Eventos corporativos, inauguraciones, recepciones y celebraciones con mayor circ
 
 ### [H3] Servicio de Barra
 
-Una barra adaptable al estilo y duración de tu evento, disponible como servicio independiente o como complemento de cualquiera de nuestros menús. Puede incluir vinos, cervezas y cócteles personalizados.
+Vinos, cervezas y cócteles. Funciona sola o como complemento de cualquier menú.
 
 #### [H4] Recomendado para
 
-Matrimonios, fiestas de empresa, aniversarios y eventos que necesitan una solución de bebidas coordinada.
+Cualquier evento que necesite una solución de bebidas coordinada.
 
 **CTA:** Agregar barra a mi cotización
 
-## [H2] Cordero al palo preparado en el lugar del evento
-
-El cordero al palo se cocina lentamente con fuego vivo y leña nativa. La preparación se realiza a la vista y puede convertirse en uno de los momentos centrales del evento.
-
-Nuestro equipo llega con los implementos necesarios y se encarga de la instalación, la preparación y el servicio. Trabajamos en parcelas, jardines, empresas, domicilios y centros de eventos de la Región del Biobío y alrededores.
-
-### [H3] Cómo preparamos el cordero al palo
-
-#### [H4] Cocción lenta con fuego vivo
-
-Trabajamos durante horas con leña nativa y controlamos el fuego durante todo el proceso de cocción.
-
-#### [H4] Preparación a la vista
-
-Los invitados pueden observar el proceso mientras participan de la celebración.
-
-#### [H4] Instalación y servicio
-
-Nos ocupamos de la instalación, la preparación y el servicio contratado.
-
-**CTA:** Cotizar cordero al palo
-
 ## [H2] Producción integral para matrimonios y eventos grandes
 
-Si estás organizando un matrimonio o un evento de mayor escala, podemos coordinar una producción integral. Centralizamos distintos servicios para reducir la cantidad de proveedores que debes gestionar.
+Centralizamos gastronomía, equipamiento y logística en un solo equipo. Menos proveedores, menos coordinación de tu parte.
 
-### [H3] Servicios que puedes incorporar
-
-La propuesta puede incorporar:
+### [H3] Incluye según lo que necesites
 
 - Parrilla y cordero al palo
 - Mesas y sillas
@@ -114,79 +110,79 @@ La propuesta puede incorporar:
 - Animación y coordinación
 - Servicios técnicos adicionales
 
-Definimos los servicios según el lugar, el número de invitados y el formato de la celebración.
+Armamos la propuesta según el lugar, la cantidad de invitados y el estilo de tu evento.
 
 **CTA:** Armar mi evento ideal
 
 ## [H2] Servicios adicionales
 
-Puedes incorporar estos servicios a tu propuesta gastronómica o producción integral, según las condiciones del lugar y las necesidades de tu evento.
+Complementos que puedes sumar a cualquier propuesta gastronómica o de producción.
 
 ### [H3] Carpas
 
-Estructuras de distintos tamaños para proteger espacios exteriores del sol o la lluvia. Incluyen montaje y desmontaje.
+Protección para exteriores con montaje y desmontaje incluido.
 
 ### [H3] Generadores
 
-Equipos de distintas capacidades para respaldar la energía necesaria durante el evento.
+Respaldo eléctrico para eventos en lugares sin conexión o con suministro limitado.
 
 ### [H3] Iluminación
 
-Guirnaldas, iluminación ambiental, luces para sectores específicos y soluciones para crear la atmósfera adecuada.
+Guirnaldas, focos ambientales y luces dirigidas para definir la atmósfera.
 
 ### [H3] Estufas
 
-Equipos de calefacción para mejorar la comodidad de los invitados en celebraciones de otoño e invierno.
+Calefacción exterior para eventos en otoño e invierno.
 
 ### [H3] Animación
 
-Coordinación de DJ, maestro de ceremonias y animadores para matrimonios, celebraciones y eventos corporativos.
+DJ, maestro de ceremonias y conducción para matrimonios y eventos corporativos.
 
 ### [H3] Mobiliario
 
-Sillas, mesas redondas o rectangulares, tablones rústicos y mesas altas para configurar el espacio según el formato del evento.
+Sillas, mesas rectangulares, redondas, tablones rústicos y mesas altas.
 
-**CTA:** Agregar servicios a mi cotización
+**CTA:** Incluir servicios en mi cotización
 
 ## [H2] Servicios según el tipo de evento
 
 ### [H3] Matrimonios
 
-Banquetería a fuego vivo y producción integral adaptadas al lugar, el número de invitados y el formato del matrimonio.
+Gastronomía, producción y logística coordinados para que disfrutes tu día sin preocupaciones.
 
 **CTA:** Cotizar mi matrimonio
 
 ### [H3] Eventos de empresa
 
-Banquetería y producción para aniversarios, encuentros de equipo, cenas y otras celebraciones corporativas. Ajustamos el formato a las necesidades de la empresa y sus asistentes.
+Aniversarios, encuentros de equipo y cenas corporativas con formato ajustado a la empresa.
 
 **CTA:** Cotizar un evento de empresa
 
 ### [H3] Celebraciones particulares
 
-Cumpleaños, aniversarios y reuniones familiares con una propuesta que llega hasta tu parcela, domicilio o centro de eventos y se adapta a la forma en que quieres celebrar.
+Cumpleaños, aniversarios y reuniones familiares. Llegamos a tu parcela, domicilio o centro de eventos.
 
 **CTA:** Cotizar mi celebración
 
-## [H2] Testimonios de clientes
+## [H2] Lo que dicen nuestros clientes
 
 ### [H3] Matrimonio en Granja Matilde
 
-“Tuvimos nuestro matrimonio en la Granja Matilde y contratamos a Fuego de Patio para toda la gastronomía. El cordero al palo fue impresionante; mis suegros, que son del campo, me dijeron que era el mejor que habían probado. El equipo llegó puntual y montó todo sin que nosotros tuviéramos que preocuparnos de nada.”
+"Tuvimos nuestro matrimonio en la Granja Matilde y contratamos a Fuego de Patio para toda la gastronomía. El cordero al palo fue impresionante; mis suegros, que son del campo, me dijeron que era el mejor que habían probado. El equipo llegó puntual y montó todo sin que nosotros tuviéramos que preocuparnos de nada."
 
 **Camila y Rodrigo**  
 Matrimonio · Granja Matilde · 145 personas
 
 ### [H3] Celebración familiar en Los Ángeles
 
-“Celebramos el aniversario de mi mamá en nuestra parcela en Los Ángeles. La parrilla a leña nativa, el mesón campestre y el trato del equipo estuvieron perfectos. Ya los tenemos considerados para el matrimonio de mi hermana.”
+"Celebramos el aniversario de mi mamá en nuestra parcela en Los Ángeles. La parrilla a leña nativa, el mesón campestre y el trato del equipo estuvieron perfectos. Ya los tenemos considerados para el matrimonio de mi hermana."
 
 **Valentina S.**  
 Celebración familiar · Parcela en Los Ángeles · 55 personas
 
 ### [H3] Evento corporativo de Empresa Otey
 
-“En Empresa Otey llevamos dos años consecutivos celebrando el Día del Trabajador con Fuego de Patio. La calidad de la carne, la organización del equipo y el trato con nuestros trabajadores son siempre impecables. Ya son parte de nuestra celebración anual.”
+"En Empresa Otey llevamos dos años consecutivos celebrando el Día del Trabajador con Fuego de Patio. La calidad de la carne, la organización del equipo y el trato con nuestros trabajadores son siempre impecables. Ya son parte de nuestra celebración anual."
 
 **Mery Saavedra**  
 Encargada de Logística y RR. HH. · Empresa Otey
@@ -207,13 +203,11 @@ Nuestro equipo organiza el montaje y la operación de los servicios incluidos en
 
 ## [H2] Cotiza tu evento con Fuego de Patio
 
-Envíanos los datos principales de tu evento para preparar una propuesta según el lugar, la cantidad de invitados y los servicios que necesitas.
+Completa el formulario con los datos de tu evento y te enviaremos una propuesta a medida.
 
 **CTA principal:** Cotizar mi evento
 
 **CTA alternativo:** Hablar por WhatsApp
-
-**Datos útiles para iniciar la cotización:** fecha, comuna, tipo de evento, cantidad estimada de invitados y servicios de interés.
 
 ## [H2] Contacto
 
@@ -239,13 +233,13 @@ Envíanos los datos principales de tu evento para preparar una propuesta según 
 
 ### [H3] Información que debe validarse con el cliente
 
-- Confirmar que “más de 500 eventos” y “más de 8 años de experiencia” siguen siendo cifras correctas.
-- Confirmar el alcance exacto de “Biobío y alrededores” y si existen cargos de traslado.
+- Confirmar que "más de 500 eventos" y "más de 8 años de experiencia" siguen siendo cifras correctas.
+- Confirmar el alcance exacto de "Biobío y alrededores" y si existen cargos de traslado.
 - Confirmar qué incluye realmente cada menú; el texto evita afirmar que todos los componentes están incluidos por defecto.
 - Confirmar si la barra puede contratarse de forma independiente.
 - Confirmar disponibilidad, capacidades y condiciones de carpas, generadores, estufas, iluminación y mobiliario.
 - Confirmar que los tres testimonios cuentan con autorización para publicación y que nombres, empresas, lugares y cifras son correctos.
-- Mantener las expresiones subjetivas de los testimonios —como “impresionante” o “perfecto”— únicamente si corresponden a citas reales. No reutilizarlas como afirmaciones de la marca.
+- Mantener las expresiones subjetivas de los testimonios —como "impresionante" o "perfecto"— únicamente si corresponden a citas reales. No reutilizarlas como afirmaciones de la marca.
 - Confirmar que WhatsApp está habilitado en el número publicado.
 - Definir tiempos de respuesta y anticipación mínima recomendada para reservar.
 

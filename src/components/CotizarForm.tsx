@@ -63,8 +63,23 @@ const initialState: FormState = {
   },
 };
 
-export default function CotizarForm() {
-  const [formData, setFormData] = useState<FormState>(initialState);
+interface CotizarFormProps {
+  defaultServicio?: GastronomiaKeys;
+}
+
+export default function CotizarForm({ defaultServicio }: CotizarFormProps = {}) {
+  const [formData, setFormData] = useState<FormState>(() => {
+    if (defaultServicio && defaultServicio in initialState.gastronomia) {
+      return {
+        ...initialState,
+        gastronomia: {
+          ...initialState.gastronomia,
+          [defaultServicio]: true,
+        },
+      };
+    }
+    return initialState;
+  });
   const [highlighted, setHighlighted] = useState<string | null>(null);
 
   /* ── Preselection listener ───────────────────────────────── */

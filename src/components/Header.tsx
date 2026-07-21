@@ -7,21 +7,27 @@ import Button from "./Button";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        const currentProgress = (window.scrollY / totalHeight) * 100;
+        setScrollProgress(Math.min(100, Math.max(0, currentProgress)));
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { href: "#gastronomia", label: "Gastronomía" },
-    { href: "#cordero", label: "Cordero al Palo" },
-    { href: "#produccion", label: "Producción" },
-    { href: "#adicionales", label: "Servicios" },
-    { href: "#testimonios", label: "Testimonios" },
+    { href: "/#gastronomia", label: "Gastronomía" },
+    { href: "/cordero-al-palo", label: "Cordero al Palo 🔥" },
+    { href: "/#produccion", label: "Producción" },
+    { href: "/#adicionales", label: "Servicios" },
+    { href: "/#testimonios", label: "Testimonios" },
   ];
 
   return (
@@ -32,24 +38,29 @@ export default function Header() {
           : "bg-brand-dark text-brand-beige py-4 border-b border-brand-beige/5"
       }`}
     >
+      {/* Scroll Progress Bar */}
+      <div
+        className="absolute bottom-0 left-0 h-[2px] bg-brand-orange transition-all duration-150 ease-out opacity-85"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Identity */}
         <a
-          href="#"
-          className="font-display font-black text-xl tracking-wider text-brand-orange uppercase flex items-center gap-2"
+          href="/"
+          className="flex items-center py-1 group"
           aria-label="Fuego de Patio — Inicio"
         >
-          <span className="relative h-8 w-8 shrink-0 overflow-hidden" aria-hidden="true">
-            <Image
-              src="/logo-fuego.png"
-              alt=""
-              width={1254}
-              height={1254}
-              preload
-              className="absolute -left-10 -top-6 h-28 w-28 max-w-none"
-            />
-          </span>
-          <span>Fuego de Patio</span>
+          <Image
+            src="/logo-fuego.png"
+            alt="Fuego de Patio"
+            width={1024}
+            height={973}
+            priority
+            style={{ height: "2.75rem", width: "auto" }}
+            className="object-contain transition-transform duration-200 group-hover:scale-105"
+          />
         </a>
 
         {/* Desktop Navigation */}

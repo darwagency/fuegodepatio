@@ -3,6 +3,8 @@ import React from "react";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
   href?: string;
+  target?: string;
+  rel?: string;
   children: React.ReactNode;
   className?: string;
 }
@@ -10,6 +12,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({
   variant = "primary",
   href,
+  target,
+  rel,
   children,
   className = "",
   ...props
@@ -30,7 +34,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={combinedClassName}>
+      <a href={href} target={target} rel={rel} className={combinedClassName}>
         {children}
       </a>
     );

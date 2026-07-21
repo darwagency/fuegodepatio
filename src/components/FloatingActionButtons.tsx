@@ -31,7 +31,7 @@ export default function FloatingActionButtons() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
-        className="pointer-events-auto flex items-center justify-center gap-2 min-h-12 px-4 rounded-full bg-brand-orange text-brand-dark shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-brand-orange/40"
+        className="pointer-events-auto flex items-center justify-center gap-2 min-h-12 px-4 rounded-full bg-brand-orange text-brand-dark shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-brand-orange/40 pulse-whatsapp-ring btn-hover-shine"
       >
         <svg
           className="w-5 h-5"

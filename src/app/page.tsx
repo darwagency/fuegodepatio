@@ -8,10 +8,13 @@ import CotizarCTA from "@/components/CotizarCTA";
 import FloatingActionButtons from "@/components/FloatingActionButtons";
 import Image from "next/image";
 import ImageCarousel from "@/components/ImageCarousel";
+import ScrollRevealObserver from "@/components/ScrollRevealObserver";
 
 export default function Home() {
   return (
     <>
+      <ScrollRevealObserver />
+
       {/* Skip to Main Content Link */}
       <a
         href="#main-content"
@@ -29,16 +32,16 @@ export default function Home() {
         <section className="hero-section relative bg-brand-dark text-brand-beige overflow-hidden">
           <div className="hero-grid max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Left Content */}
-            <div className="hero-copy">
+            <div className="hero-copy" data-reveal="fade-up">
               <h1 className="font-display font-extrabold tracking-[-0.045em] leading-[0.98] text-brand-beige">
                 Banquetería a <span className="text-brand-orange">fuego vivo</span> para matrimonios, empresas y celebraciones
               </h1>
               <p className="hero-lead text-brand-beige/85 max-w-2xl">
-                Parrillas a la llama, cordero al palo y producción integral de eventos en la Región del Biobío y alrededores.
+                Parrillas, cordero al palo y producción completa de eventos en la Región del Biobío y alrededores.
               </p>
 
               <div className="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <Button href="#cotizar" variant="primary">
+                <Button href="#cotizar" variant="primary" className="btn-hover-shine">
                   Cotizar mi evento
                 </Button>
                 <Button href="#gastronomia" variant="outline" className="border-brand-beige/35 text-brand-beige hover:bg-brand-beige/10 active:bg-brand-beige/15">
@@ -48,7 +51,7 @@ export default function Home() {
             </div>
 
             {/* Right Image */}
-            <div className="hero-media w-full relative aspect-[5/4] lg:aspect-[4/5] rounded-[1.25rem] overflow-hidden shadow-2xl hero-placeholder">
+            <div className="hero-media w-full relative aspect-[5/4] lg:aspect-[4/5] rounded-[1.25rem] overflow-hidden shadow-2xl hero-placeholder" data-reveal="zoom-in" data-reveal-delay="200">
               <Image
                 src="/images/hero_dueno_parrilla.png"
                 alt="Parrilla a fuego vivo durante un evento de Fuego de Patio, con el equipo de parrilleros cocinando carne"
@@ -59,8 +62,8 @@ export default function Home() {
               />
             </div>
 
-            <p className="hero-support text-sm sm:text-base text-brand-beige/70 leading-relaxed max-w-xl">
-              Nos trasladamos hasta el lugar y coordinamos los servicios contratados para que no tengas que organizar cada proveedor por separado.
+            <p className="hero-support text-sm sm:text-base text-brand-beige/70 leading-relaxed max-w-xl" data-reveal="fade-up" data-reveal-delay="300">
+              Llegamos al lugar con todo lo necesario y coordinamos cada servicio para que tú solo te preocupes de disfrutar.
             </p>
           </div>
 
@@ -71,8 +74,8 @@ export default function Home() {
                 "Más de 500 eventos realizados",
                 "Más de 8 años de experiencia",
                 "Propuestas personalizadas",
-              ].map((item) => (
-                <div key={item} className="trust-item">
+              ].map((item, idx) => (
+                <div key={item} className="trust-item" data-reveal="fade-up" data-reveal-delay={`${(idx + 1) * 100}`}>
                   <span className="trust-dot" aria-hidden="true" />
                   <span>{item}</span>
                 </div>
@@ -81,12 +84,84 @@ export default function Home() {
           </div>
         </section>
 
+        {/* CORDERO AL PALO SECTION */}
+        <section id="cordero" className="section-pad feature-section bg-brand-beige border-b border-brand-dark/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="feature-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Text Info */}
+              <div className="feature-copy space-y-6" data-reveal="slide-right">
+                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
+                  Cordero al palo preparado en el lugar del evento
+                </h2>
+                <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
+                  Cocción lenta con fuego vivo y leña nativa, a la vista de tus invitados. Nuestro equipo se encarga de todo: instalación, preparación y servicio en el lugar que elijas.
+                </p>
+                
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <CotizarCTA preselect={{ servicio: "cordero" }} variant="primary" className="btn-hover-shine">
+                    Cotizar cordero al palo
+                  </CotizarCTA>
+                  <Button href="/cordero-al-palo" variant="outline" className="border-brand-dark/30 text-brand-dark hover:bg-brand-dark/5">
+                    Más sobre el cordero al palo →
+                  </Button>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="feature-media w-full" data-reveal="slide-left" data-reveal-delay="150">
+                <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden shadow-xl border border-brand-dark/10">
+                  <Image
+                    src="/images/cordero_dos_corderos.png"
+                    alt="Dos corderos al palo cocinándose con fuego vivo y leña nativa"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Preparation Details */}
+            <div className="preparation-block pt-8 border-t border-brand-dark/10" data-reveal="fade-up" data-reveal-delay="200">
+              <h3 className="font-display font-bold text-lg text-brand-dark mb-6">
+                Cómo preparamos el cordero al palo
+              </h3>
+              <div className="mobile-card-row grid md:grid-cols-3 gap-4 md:gap-6">
+                <div className="process-card bg-brand-dark/5 p-5 border border-brand-dark/10 space-y-2">
+                  <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
+                    Cocción lenta con fuego vivo
+                  </h4>
+                  <p className="text-xs sm:text-sm text-brand-dark/80">
+                    Horas de cocción con leña nativa y control constante de la temperatura.
+                  </p>
+                </div>
+                <div className="process-card bg-brand-dark/5 p-5 border border-brand-dark/10 space-y-2">
+                  <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
+                    Preparación a la vista
+                  </h4>
+                  <p className="text-xs sm:text-sm text-brand-dark/80">
+                    Los invitados pueden observar el proceso mientras participan de la celebración.
+                  </p>
+                </div>
+                <div className="process-card bg-brand-dark/5 p-5 border border-brand-dark/10 space-y-2">
+                  <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
+                    Instalación y servicio completo
+                  </h4>
+                  <p className="text-xs sm:text-sm text-brand-dark/80">
+                    Montamos, cocinamos, servimos y retiramos. Tú no necesitas coordinar nada.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* INTRODUCTION & REASONS SECTION */}
         <section id="gastronomia" className="section-pad bg-brand-beige">
           <div className="editorial-grid max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="editorial-heading space-y-6">
+            <div className="editorial-heading space-y-6" data-reveal="fade-up">
               <h2 className="section-title font-display font-extrabold text-brand-dark">
-                Gastronomía a fuego vivo adaptada a tu evento
+                Cocinamos frente a tus invitados
               </h2>
               <ImageCarousel
                 images={[
@@ -101,16 +176,13 @@ export default function Home() {
                 className="w-full"
               />
             </div>
-            <div className="editorial-body space-y-6">
+            <div className="editorial-body space-y-6" data-reveal="fade-up" data-reveal-delay="150">
               <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
-                En Fuego de Patio cocinamos frente a tus invitados con fuego vivo y leña nativa. La preparación forma parte del evento y se complementa con un servicio organizado y una presentación cuidada.
-              </p>
-              <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
-                Adaptamos la propuesta al lugar, al número de asistentes y al tipo de celebración. Puedes contratar solo la banquetería o sumar producción, mobiliario, iluminación, barra y animación.
+                La parrilla a la vista es parte del evento. Puedes contratar solo la banquetería o sumar producción, mobiliario, iluminación, barra y animación.
               </p>
             </div>
 
-            <div className="reasons-panel space-y-6">
+            <div className="reasons-panel space-y-6" data-reveal="zoom-in" data-reveal-delay="200">
               <h3 className="font-display font-bold text-lg text-brand-dark">
                 Razones para elegir Fuego de Patio
               </h3>
@@ -120,7 +192,7 @@ export default function Home() {
                     Cocina a la vista
                   </h4>
                   <p className="text-xs sm:text-sm text-brand-dark/80">
-                    la preparación con fuego vivo y leña nativa sucede frente a los invitados.
+                    Tus invitados ven y huelen la preparación mientras disfrutan del evento.
                   </p>
                 </li>
                 <li className="space-y-1">
@@ -128,29 +200,29 @@ export default function Home() {
                     Llegamos donde nos necesites
                   </h4>
                   <p className="text-xs sm:text-sm text-brand-dark/80">
-                    trabajamos en parcelas, domicilios, empresas y centros de eventos del Biobío y sus alrededores.
+                    Parcelas, domicilios, empresas o centros de eventos en todo el Biobío.
                   </p>
                 </li>
                 <li className="space-y-1">
                   <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
-                    Propuestas adaptables
+                    Propuestas a medida
                   </h4>
                   <p className="text-xs sm:text-sm text-brand-dark/80">
-                    ajustamos el menú, el servicio y el montaje a las características de tu evento.
+                    Menú, formato y montaje ajustados al espacio, cantidad de personas y estilo de tu evento.
                   </p>
                 </li>
                 <li className="space-y-1">
                   <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
-                    Servicios centralizados
+                    Un solo proveedor
                   </h4>
                   <p className="text-xs sm:text-sm text-brand-dark/80">
-                    puedes sumar equipamiento y producción para coordinar menos proveedores.
+                    Sumá equipamiento, barra y producción sin sumar proveedores adicionales.
                   </p>
                 </li>
               </ul>
               
               <div className="pt-4">
-                <Button href="#cotizar" variant="secondary">
+                <Button href="#cotizar" variant="secondary" className="btn-hover-shine">
                   Quiero recibir una propuesta
                 </Button>
               </div>
@@ -161,12 +233,12 @@ export default function Home() {
         {/* PROPUESTAS GASTRONÓMICAS */}
         <section className="section-pad proposals-section bg-brand-dark/5 border-t border-brand-dark/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="max-w-3xl space-y-4">
+            <div className="max-w-3xl space-y-4" data-reveal="fade-up">
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
                 Propuestas gastronómicas
               </h2>
               <p className="text-sm sm:text-base text-brand-dark/85">
-                Te ayudamos a elegir un formato según el tipo de evento, el espacio disponible y la cantidad de invitados.
+                Cuatro formatos distintos para que elijas el que mejor calce con tu celebración.
               </p>
             </div>
 
@@ -175,7 +247,7 @@ export default function Home() {
               gridColsClassName="md:grid-cols-2 lg:grid-cols-4"
             >
               {/* Buffet del Asador */}
-              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5">
+              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5" data-reveal="fade-up" data-reveal-delay="100">
                 <div className="space-y-4">
                   <ImageCarousel
                     images={[
@@ -190,7 +262,7 @@ export default function Home() {
                     Buffet del Asador
                   </h3>
                   <p className="text-xs text-brand-dark/80 leading-relaxed">
-                    Una propuesta abundante y variada, con distintos cortes de carne preparados a la parrilla y a la llama de leña nativa. Incluye alternativas de acompañamientos calientes, ensaladas, postres y barra según la configuración elegida.
+                    Distintos cortes a la parrilla con acompañamientos calientes, ensaladas, postres y barra. El formato más completo.
                   </p>
                   <div className="space-y-1">
                     <h4 className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">
@@ -204,14 +276,14 @@ export default function Home() {
                 <CotizarCTA
                   preselect={{ servicio: "buffet" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Cotizar Buffet del Asador
                 </CotizarCTA>
               </div>
 
               {/* Piqueo Parrilla */}
-              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5">
+              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5" data-reveal="fade-up" data-reveal-delay="200">
                 <div className="space-y-4">
                   <ImageCarousel
                     images={[
@@ -239,14 +311,14 @@ export default function Home() {
                 <CotizarCTA
                   preselect={{ servicio: "piqueo" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Cotizar Piqueo Parrilla
                 </CotizarCTA>
               </div>
 
               {/* Cóctel Extendido */}
-              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5">
+              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5" data-reveal="fade-up" data-reveal-delay="300">
                 <div className="space-y-4">
                   <ImageCarousel
                     images={[
@@ -260,7 +332,7 @@ export default function Home() {
                     Cóctel Extendido
                   </h3>
                   <p className="text-xs text-brand-dark/80 leading-relaxed">
-                    Una selección de bocados para eventos de pie, con un servicio ágil y una presentación cuidada. Su formato facilita la circulación y la conversación entre los invitados.
+                    Bocados servidos de pie con servicio ágil. Ideal cuando los invitados circulan y conversan.
                   </p>
                   <div className="space-y-1">
                     <h4 className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">
@@ -274,14 +346,14 @@ export default function Home() {
                 <CotizarCTA
                   preselect={{ servicio: "coctel" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Cotizar Cóctel Extendido
                 </CotizarCTA>
               </div>
 
               {/* Servicio de Barra */}
-              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5">
+              <div className="menu-card bg-brand-beige border border-brand-dark/10 overflow-hidden p-5 flex flex-col justify-between h-full gap-5" data-reveal="fade-up" data-reveal-delay="400">
                 <div className="space-y-4">
                   <ImageCarousel
                     images={[
@@ -294,21 +366,21 @@ export default function Home() {
                     Servicio de Barra
                   </h3>
                   <p className="text-xs text-brand-dark/80 leading-relaxed">
-                    Una barra adaptable al estilo y duración de tu evento, disponible como servicio independiente o como complemento de cualquiera de nuestros menús. Puede incluir vinos, cervezas y cócteles personalizados.
+                    Vinos, cervezas y cócteles. Funciona sola o como complemento de cualquier menú.
                   </p>
                   <div className="space-y-1">
                     <h4 className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">
                       Recomendado para
                     </h4>
                     <p className="text-xs text-brand-dark/70">
-                      Matrimonios, fiestas de empresa, aniversarios y eventos que necesitan una solución de bebidas coordinada.
+                      Cualquier evento que necesite una solución de bebidas coordinada.
                     </p>
                   </div>
                 </div>
                 <CotizarCTA
                   preselect={{ servicio: "barra" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Agregar barra a mi cotización
                 </CotizarCTA>
@@ -317,100 +389,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CORDERO AL PALO */}
-        <section id="cordero" className="section-pad feature-section bg-brand-beige">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="feature-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Text Info */}
-              <div className="feature-copy space-y-6">
-                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
-                  Cordero al palo preparado en el lugar del evento
-                </h2>
-                <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
-                  El cordero al palo se cocina lentamente con fuego vivo y leña nativa. La preparación se realiza a la vista y puede convertirse en uno de los momentos centrales del evento.
-                </p>
-                <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
-                  Nuestro equipo llega con los implementos necesarios y se encarga de la instalación, la preparación y el servicio. Trabajamos en parcelas, jardines, empresas, domicilios y centros de eventos de la Región del Biobío y alrededores.
-                </p>
-                
-                <div className="pt-2">
-                  <CotizarCTA preselect={{ servicio: "cordero" }} variant="primary">
-                    Cotizar cordero al palo
-                  </CotizarCTA>
-                </div>
-              </div>
-
-              {/* Image Carousel */}
-              <div className="feature-media">
-                <ImageCarousel
-                  images={[
-                    { src: "/images/cordero_un_cordero.png", alt: "Un cordero al palo asándose lentamente a la leña" },
-                    { src: "/images/cordero_dos_corderos.png", alt: "Dos corderos al palo cocinándose con fuego vivo" },
-                    { src: "/images/cordero_3_corderos.png", alt: "Tres corderos al palo en proceso de asado al aire libre" },
-                    { src: "/images/cordero_2_corderos_angulo1.png", alt: "Dos corderos al palo desde otro ángulo de cocción" },
-                    { src: "/images/cordero_2_corderos_angulo2.png", alt: "Vista detallada de los corderos al palo frente al fuego nativo" }
-                  ]}
-                  aspectRatio="aspect-[16/10]"
-                  className="shadow-lg animate-fade-in"
-                />
-              </div>
-            </div>
-
-            {/* Preparation Details */}
-            <div className="preparation-block pt-8 border-t border-brand-dark/10">
-              <h3 className="font-display font-bold text-lg text-brand-dark mb-6">
-                Cómo preparamos el cordero al palo
-              </h3>
-              <div className="mobile-card-row grid md:grid-cols-3 gap-4 md:gap-6">
-                <div className="process-card bg-brand-dark/5 p-5 border border-brand-dark/10 space-y-2">
-                  <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
-                    Cocción lenta con fuego vivo
-                  </h4>
-                  <p className="text-xs sm:text-sm text-brand-dark/80">
-                    Trabajamos durante horas con leña nativa y controlamos el fuego durante todo el proceso de cocción.
-                  </p>
-                </div>
-                <div className="process-card bg-brand-dark/5 p-5 border border-brand-dark/10 space-y-2">
-                  <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
-                    Preparación a la vista
-                  </h4>
-                  <p className="text-xs sm:text-sm text-brand-dark/80">
-                    Los invitados pueden observar el proceso mientras participan de la celebración.
-                  </p>
-                </div>
-                <div className="process-card bg-brand-dark/5 p-5 border border-brand-dark/10 space-y-2">
-                  <h4 className="font-display font-semibold text-brand-orange text-sm uppercase tracking-wider">
-                    Instalación y servicio
-                  </h4>
-                  <p className="text-xs sm:text-sm text-brand-dark/80">
-                    Nos ocupamos de la instalación, la preparación y el servicio contratado.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* PRODUCCIÓN INTEGRAL */}
         <section id="produccion" className="section-pad production-section bg-brand-dark text-brand-beige">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column Text */}
-              <div className="lg:col-span-7 space-y-6">
+              <div className="lg:col-span-7 space-y-6" data-reveal="slide-right">
                 <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-beige tracking-tight">
                   Producción integral para matrimonios y eventos grandes
                 </h2>
                 <p className="text-sm sm:text-base text-brand-beige/85 leading-relaxed">
-                  Si estás organizando un matrimonio o un evento de mayor escala, podemos coordinar una producción integral. Centralizamos distintos servicios para reducir la cantidad de proveedores que debes gestionar.
+                  Centralizamos gastronomía, equipamiento y logística en un solo equipo. Menos proveedores, menos coordinación de tu parte.
                 </p>
 
                 <div className="space-y-4">
                   <h3 className="font-display font-bold text-sm text-brand-orange uppercase tracking-wider">
-                    Servicios que puedes incorporar
+                    Incluye según lo que necesites
                   </h3>
-                  <p className="text-xs sm:text-sm text-brand-beige/70">
-                    La propuesta puede incorporar:
-                  </p>
                   
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-brand-beige/85" role="list">
                     {[
@@ -433,19 +428,19 @@ export default function Home() {
                   </ul>
                   
                   <p className="text-xs text-brand-beige/70 pt-2 italic">
-                    Definimos los servicios según el lugar, el número de invitados y el formato de la celebración.
+                    Armamos la propuesta según el lugar, la cantidad de invitados y el estilo de tu evento.
                   </p>
                 </div>
 
                 <div className="pt-4">
-                  <CotizarCTA preselect={{ servicio: "produccion" }} variant="primary">
+                  <CotizarCTA preselect={{ servicio: "produccion" }} variant="primary" className="btn-hover-shine">
                     Armar mi evento ideal
                   </CotizarCTA>
                 </div>
               </div>
 
               {/* Right Column Images */}
-              <div className="lg:col-span-5 w-full">
+              <div className="lg:col-span-5 w-full" data-reveal="slide-left" data-reveal-delay="150">
                 <ImageCarousel
                   images={[
                     { src: "/images/produccion_mesas_sillas.png", alt: "Salón o carpa de evento decorada con mesas y sillas de madera" },
@@ -462,24 +457,13 @@ export default function Home() {
         {/* SERVICIOS ADICIONALES */}
         <section id="adicionales" className="section-pad bg-brand-beige">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-end">
-              <div className="lg:col-span-7 space-y-4">
-                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
-                  Servicios adicionales
-                </h2>
-                <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
-                  Puedes incorporar estos servicios a tu propuesta gastronómica o producción integral, según las condiciones del lugar y las necesidades de tu evento.
-                </p>
-              </div>
-              <div className="lg:col-span-5 relative aspect-[16/6] rounded-[1.25rem] overflow-hidden">
-                <Image
-                  src="/images/servicio_iluminacion.png"
-                  alt="Iluminación ambiental decorativa montada para un evento nocturno"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 30vw"
-                  className="object-cover"
-                />
-              </div>
+            <div className="max-w-3xl space-y-4" data-reveal="fade-up">
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
+                Servicios adicionales
+              </h2>
+              <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
+                Complementos que puedes sumar a cualquier propuesta gastronómica o de producción.
+              </p>
             </div>
 
             <Carousel
@@ -487,14 +471,14 @@ export default function Home() {
               gridColsClassName="md:grid-cols-3"
             >
               {[
-                { title: "Carpas", desc: "Estructuras de distintos tamaños para proteger espacios exteriores del sol o la lluvia. Incluyen montaje y desmontaje.", img: "/images/servicio_carpas.png", alt: "Toldo y carpa grande montada para evento en el exterior" },
-                { title: "Generadores", desc: "Equipos de distintas capacidades para respaldar la energía necesaria durante el evento.", img: "/images/servicio_generador.png", alt: "Generador eléctrico para respaldo de energía durante el evento" },
-                { title: "Iluminación", desc: "Guirnaldas, iluminación ambiental, luces para sectores específicos y soluciones para crear la atmósfera adecuada.", img: "/images/servicio_iluminacion.png", alt: "Iluminación de guirnaldas y focos para eventos" },
-                { title: "Estufas", desc: "Equipos de calefacción para mejorar la comodidad de los invitados en celebraciones de otoño e invierno.", img: "/images/servicio_estufas.png", alt: "Estufa de pie para calefacción exterior en eventos" },
-                { title: "Animación", desc: "Coordinación de DJ, maestro de ceremonias y animadores para matrimonios, celebraciones y eventos corporativos.", img: "/images/servicio_animacion.png", alt: "Animador de bodas animando a los invitados en la pista de baile" },
-                { title: "Mobiliario", desc: "Sillas, mesas redondas o rectangulares, tablones rústicos y mesas altas para configurar el espacio según el formato del evento.", img: "/images/servicio_mobiliario.png", alt: "Mesas de madera y sillas tipo X instaladas para el banquete" }
+                { title: "Carpas", desc: "Protección para exteriores con montaje y desmontaje incluido.", img: "/images/servicio_carpas.png", alt: "Toldo y carpa grande montada para evento en el exterior" },
+                { title: "Generadores", desc: "Respaldo eléctrico para eventos en lugares sin conexión o con suministro limitado.", img: "/images/servicio_generador.png", alt: "Generador eléctrico para respaldo de energía durante el evento" },
+                { title: "Iluminación", desc: "Guirnaldas, focos ambientales y luces dirigidas para definir la atmósfera.", img: "/images/servicio_iluminacion.png", alt: "Iluminación de guirnaldas y focos para eventos" },
+                { title: "Estufas", desc: "Calefacción exterior para eventos en otoño e invierno.", img: "/images/servicio_estufas.png", alt: "Estufa de pie para calefacción exterior en eventos" },
+                { title: "Animación", desc: "DJ, maestro de ceremonias y conducción para matrimonios y eventos corporativos.", img: "/images/servicio_animacion.png", alt: "Animador de bodas animando a los invitados en la pista de baile" },
+                { title: "Mobiliario", desc: "Sillas, mesas rectangulares, redondas, tablones rústicos y mesas altas.", img: "/images/servicio_mobiliario.png", alt: "Mesas de madera y sillas tipo X instaladas para el banquete" }
               ].map((serv, idx) => (
-                <div key={idx} className="service-card bg-brand-dark/5 overflow-hidden border border-brand-dark/10 flex flex-col justify-between h-full group hover:border-brand-orange/50 transition-colors duration-300">
+                <div key={idx} className="service-card bg-brand-dark/5 overflow-hidden border border-brand-dark/10 flex flex-col justify-between h-full group hover:border-brand-orange/50 transition-colors duration-300" data-reveal="fade-up" data-reveal-delay={`${(idx % 3 + 1) * 100}`}>
                   <div className="relative aspect-[16/10] w-full bg-brand-dark overflow-hidden">
                     <Image
                       src={serv.img}
@@ -519,8 +503,8 @@ export default function Home() {
               ))}
             </Carousel>
 
-            <div className="flex justify-center pt-2">
-              <Button href="#cotizar" variant="secondary">
+            <div className="flex justify-center pt-2" data-reveal="fade-up">
+              <Button href="#cotizar" variant="secondary" className="btn-hover-shine">
                 Incluir servicios en mi cotización
               </Button>
             </div>
@@ -530,7 +514,7 @@ export default function Home() {
         {/* SERVICIOS SEGÚN EL TIPO DE EVENTO */}
         <section className="section-pad event-section bg-brand-dark/5 border-t border-b border-brand-dark/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl" data-reveal="fade-up">
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
                 Servicios según el tipo de evento
               </h2>
@@ -538,57 +522,57 @@ export default function Home() {
 
             <Carousel ariaLabel="Servicios según el tipo de evento" gridColsClassName="md:grid-cols-3">
               {/* Matrimonios */}
-              <div className="event-card bg-brand-beige p-6 border border-brand-dark/10 flex flex-col justify-between gap-6 h-full">
+              <div className="event-card bg-brand-beige p-6 border border-brand-dark/10 flex flex-col justify-between gap-6 h-full" data-reveal="fade-up" data-reveal-delay="100">
                 <div className="space-y-3">
                   <h3 className="font-display font-bold text-lg text-brand-dark">
                     Matrimonios
                   </h3>
                   <p className="text-xs sm:text-sm text-brand-dark/80 leading-relaxed">
-                    Banquetería a fuego vivo y producción integral adaptadas al lugar, el número de invitados y el formato del matrimonio.
+                    Gastronomía, producción y logística coordinados para que disfrutes tu día sin preocupaciones.
                   </p>
                 </div>
                 <CotizarCTA
                   preselect={{ tipo: "Matrimonio" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Cotizar mi matrimonio
                 </CotizarCTA>
               </div>
 
               {/* Eventos de empresa */}
-              <div className="event-card bg-brand-beige p-6 border border-brand-dark/10 flex flex-col justify-between gap-6 h-full">
+              <div className="event-card bg-brand-beige p-6 border border-brand-dark/10 flex flex-col justify-between gap-6 h-full" data-reveal="fade-up" data-reveal-delay="200">
                 <div className="space-y-3">
                   <h3 className="font-display font-bold text-lg text-brand-dark">
                     Eventos de empresa
                   </h3>
                   <p className="text-xs sm:text-sm text-brand-dark/80 leading-relaxed">
-                    Banquetería y producción para aniversarios, encuentros de equipo, cenas y otras celebraciones corporativas. Ajustamos el formato a las necesidades de la empresa y sus asistentes.
+                    Aniversarios, encuentros de equipo y cenas corporativas con formato ajustado a la empresa.
                   </p>
                 </div>
                 <CotizarCTA
                   preselect={{ tipo: "Evento de Empresa" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Cotizar un evento de empresa
                 </CotizarCTA>
               </div>
 
               {/* Celebraciones particulares */}
-              <div className="event-card bg-brand-beige p-6 border border-brand-dark/10 flex flex-col justify-between gap-6 h-full">
+              <div className="event-card bg-brand-beige p-6 border border-brand-dark/10 flex flex-col justify-between gap-6 h-full" data-reveal="fade-up" data-reveal-delay="300">
                 <div className="space-y-3">
                   <h3 className="font-display font-bold text-lg text-brand-dark">
                     Celebraciones particulares
                   </h3>
                   <p className="text-xs sm:text-sm text-brand-dark/80 leading-relaxed">
-                    Cumpleaños, aniversarios y reuniones familiares con una propuesta que llega hasta tu parcela, domicilio o centro de eventos y se adapta a la forma en que quieres celebrar.
+                    Cumpleaños, aniversarios y reuniones familiares. Llegamos a tu parcela, domicilio o centro de eventos.
                   </p>
                 </div>
                 <CotizarCTA
                   preselect={{ tipo: "Celebración Particular" }}
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center btn-hover-shine"
                 >
                   Cotizar mi celebración
                 </CotizarCTA>
@@ -600,9 +584,9 @@ export default function Home() {
         {/* TESTIMONIOS DE CLIENTES */}
         <section id="testimonios" className="section-pad testimonials-section bg-brand-beige">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl" data-reveal="fade-up">
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
-                Testimonios de clientes
+                Lo que dicen nuestros clientes
               </h2>
             </div>
 
@@ -611,7 +595,7 @@ export default function Home() {
               gridColsClassName="md:grid-cols-3"
             >
               {/* Testimonio 1 */}
-              <div className="bg-brand-dark text-brand-beige p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 border border-brand-beige/5 h-full">
+              <div className="bg-brand-dark text-brand-beige p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 border border-brand-beige/5 h-full" data-reveal="fade-up" data-reveal-delay="100">
                 <div className="space-y-4">
                   <h3 className="font-display font-bold text-base text-brand-orange border-b border-brand-beige/10 pb-2">
                     Matrimonio en Granja Matilde
@@ -627,7 +611,7 @@ export default function Home() {
               </div>
 
               {/* Testimonio 2 */}
-              <div className="bg-brand-dark text-brand-beige p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 border border-brand-beige/5 h-full">
+              <div className="bg-brand-dark text-brand-beige p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 border border-brand-beige/5 h-full" data-reveal="fade-up" data-reveal-delay="200">
                 <div className="space-y-4">
                   <h3 className="font-display font-bold text-base text-brand-orange border-b border-brand-beige/10 pb-2">
                     Celebración familiar en Los Ángeles
@@ -643,7 +627,7 @@ export default function Home() {
               </div>
 
               {/* Testimonio 3 */}
-              <div className="bg-brand-dark text-brand-beige p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 border border-brand-beige/5 h-full">
+              <div className="bg-brand-dark text-brand-beige p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 border border-brand-beige/5 h-full" data-reveal="fade-up" data-reveal-delay="300">
                 <div className="space-y-4">
                   <h3 className="font-display font-bold text-base text-brand-orange border-b border-brand-beige/10 pb-2">
                     Evento corporativo de Empresa Otey
@@ -664,7 +648,7 @@ export default function Home() {
         {/* CÓMO SOLICITAR UNA COTIZACIÓN */}
         <section className="section-pad quote-process bg-brand-dark/5 border-t border-brand-dark/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl" data-reveal="fade-up">
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
                 Cómo solicitar una cotización
               </h2>
@@ -672,7 +656,7 @@ export default function Home() {
 
             <div className="steps-row grid md:grid-cols-3 gap-6 md:gap-8">
               {/* Step 1 */}
-              <div className="step-card flex gap-4">
+              <div className="step-card flex gap-4" data-reveal="fade-up" data-reveal-delay="100">
                 <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-brand-orange text-brand-dark font-display font-bold text-lg">
                   1
                 </div>
@@ -687,7 +671,7 @@ export default function Home() {
               </div>
 
               {/* Step 2 */}
-              <div className="step-card flex gap-4">
+              <div className="step-card flex gap-4" data-reveal="fade-up" data-reveal-delay="200">
                 <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-brand-orange text-brand-dark font-display font-bold text-lg">
                   2
                 </div>
@@ -702,7 +686,7 @@ export default function Home() {
               </div>
 
               {/* Step 3 */}
-              <div className="step-card flex gap-4">
+              <div className="step-card flex gap-4" data-reveal="fade-up" data-reveal-delay="300">
                 <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-brand-orange text-brand-dark font-display font-bold text-lg">
                   3
                 </div>
@@ -722,19 +706,18 @@ export default function Home() {
         {/* COTIZACIÓN FORM SECTION */}
         <section id="cotizar" className="section-pad quote-section bg-brand-beige">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="text-center max-w-3xl mx-auto space-y-4" data-reveal="fade-up">
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-dark tracking-tight">
                 Cotiza tu evento con Fuego de Patio
               </h2>
               <p className="text-sm sm:text-base text-brand-dark/85 leading-relaxed">
-                Envíanos los datos principales de tu evento para preparar una propuesta según el lugar, la cantidad de invitados y los servicios que necesitas.
-              </p>
-              <p className="text-xs text-brand-dark/70 italic">
-                Datos útiles para iniciar la cotización: fecha, comuna, tipo de evento, cantidad estimada de invitados y servicios de interés.
+                Completa el formulario con los datos de tu evento y te enviaremos una propuesta a medida.
               </p>
             </div>
 
-            <CotizarForm />
+            <div data-reveal="zoom-in" data-reveal-delay="150">
+              <CotizarForm />
+            </div>
           </div>
         </section>
       </main>

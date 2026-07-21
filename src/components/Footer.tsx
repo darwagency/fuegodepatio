@@ -11,17 +11,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Brand Info */}
         <div className="space-y-4">
-          <div className="relative h-36 w-40 overflow-hidden">
+          <div>
             <Image
               src="/logo-fuego.png"
               alt="Fuego de Patio"
-              width={1254}
-              height={1254}
-              className="absolute -left-[58px] -top-[60px] h-[270px] w-[270px] max-w-none"
+              width={1024}
+              height={973}
+              style={{ height: "6rem", width: "auto" }}
+              className="object-contain"
             />
           </div>
           <p className="text-sm text-brand-beige/70 leading-relaxed max-w-sm">
-            Banquetería a fuego vivo y producción integral de eventos. Cocina a la vista con leña nativa en la Región del Biobío y alrededores.
+            Banquetería a fuego vivo y producción de eventos en la Región del Biobío y alrededores.
           </p>
         </div>
 
