@@ -89,9 +89,9 @@ section h2 {
 .hero-copy h1 {
   max-width: 100%;
   max-inline-size: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   font-size: clamp(1.75rem, 7vw, 5.2rem);
-  text-wrap: pretty;
+  text-wrap: balance;
   line-height: 1;
 }
 
@@ -125,6 +125,9 @@ section h2 {
 }
 
 .hero-support {
+  min-width: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
   padding-left: 1rem;
   border-left: 2px solid var(--brand-gold);
 }
@@ -149,6 +152,11 @@ section h2 {
 .trust-item + .trust-item {
   border-left: 1px solid color-mix(in srgb, var(--brand-cream) 12%, transparent);
   padding-left: 0.65rem;
+}
+
+.trust-item > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .trust-dot {
@@ -290,6 +298,12 @@ section h2 {
 }
 
 @media (max-width: 767px) {
+  #main-content,
+  #main-content section,
+  #main-content section > div {
+    min-width: 0;
+  }
+
   .hero-copy,
   .hero-media,
   .hero-support {
@@ -303,6 +317,19 @@ section h2 {
   .hero-media,
   .hero-support {
     max-inline-size: 100%;
+  }
+
+  .hero-support,
+  #cordero-destacado p,
+  #reel p,
+  .section-pad p {
+    width: 100%;
+    max-inline-size: calc(100vw - 3rem);
+    overflow-wrap: anywhere;
+  }
+
+  .trust-item {
+    overflow-wrap: anywhere;
   }
 
   .mobile-card-row,
@@ -351,7 +378,7 @@ section h2 {
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.25rem, 6.5vw, 4.5rem);
+    font-size: clamp(3rem, 6vw, 4rem);
   }
 
   .hero-media {
@@ -404,7 +431,7 @@ section h2 {
   }
 
   .hero-copy h1 {
-    font-size: clamp(3rem, 7vw, 4.25rem);
+    font-size: clamp(2.9rem, 6.2vw, 3.9rem);
   }
 
   .hero-placeholder {
@@ -431,7 +458,7 @@ section h2 {
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.8rem, 5.5vw, 5.2rem);
+    font-size: clamp(3.45rem, 4.75vw, 4.5rem);
   }
 
   .hero-media {

@@ -8,13 +8,22 @@ import CotizarForm from "@/components/CotizarForm";
 import FloatingActionButtons from "@/components/FloatingActionButtons";
 import Gallery from "@/components/Gallery";
 import ImageCarousel from "@/components/ImageCarousel";
-import { heroMedia, mediaSrc, produccionMedia, propuestasMedia } from "@/data/media";
+import VideoStories from "@/components/VideoStories";
+import {
+  corderoMedia,
+  heroMedia,
+  mediaSrc,
+  produccionMedia,
+  propuestasMedia,
+  serviciosAdicionalesMedia,
+  videoReel,
+} from "@/data/media";
 
 const menus = [
   {
     title: "Cordero al palo",
     description: "Cocción lenta con fuego vivo y leña nativa, preparada en el lugar del evento.",
-    image: propuestasMedia.piqueo[0],
+    image: corderoMedia.principal,
     href: "/cordero-al-palo",
     action: "Conocer el cordero al palo",
   },
@@ -28,15 +37,6 @@ const menus = [
     description: "Formatos de recepción, buffet y barra coordinados según tu celebración.",
     image: propuestasMedia.coctel[0],
   },
-];
-
-const productionServices = [
-  "Mobiliario y vajilla",
-  "Carpas y generadores",
-  "Iluminación y estufas",
-  "Barra y coctelería",
-  "DJ y animación",
-  "Coordinación del evento",
 ];
 
 export default function Home() {
@@ -99,6 +99,37 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="cordero-destacado" className="border-b border-brand-charcoal/10 bg-brand-cream py-5 sm:py-7">
+          <div className="mx-auto grid max-w-7xl items-center gap-5 px-4 sm:grid-cols-[0.78fr_1.22fr] sm:px-6 lg:px-8">
+            <div className="relative aspect-[16/8] overflow-hidden rounded-2xl sm:aspect-[4/3]">
+              <Image
+                src={mediaSrc(corderoMedia.portada.src)}
+                alt={corderoMedia.portada.alt}
+                fill
+                sizes="(max-width: 639px) 100vw, 36vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-3">
+              <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">Servicio destacado</p>
+              <h2 className="font-display text-2xl font-extrabold tracking-tight text-brand-charcoal sm:text-3xl">Conoce el cordero al palo</h2>
+              <p className="max-w-2xl text-sm leading-relaxed text-brand-charcoal/80">
+                El ritual más representativo de Fuego de Patio: cocción lenta, fuego vivo y servicio en tu celebración.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Button href="/cordero-al-palo" variant="secondary" className="w-full sm:w-auto">
+                  Ver experiencia de cordero
+                </Button>
+                <CotizarCTA preselect={{ servicio: "cordero" }} variant="outline" className="w-full border-brand-charcoal/30 text-brand-charcoal hover:bg-brand-charcoal/5 sm:w-auto">
+                  Cotizar cordero al palo
+                </CotizarCTA>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <VideoStories videos={videoReel} />
+
         <section id="gastronomia" className="section-pad border-b border-brand-charcoal/10 bg-brand-cream">
           <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl space-y-3">
@@ -122,7 +153,11 @@ export default function Home() {
                       <Button href={menu.href} variant="outline" className="border-brand-charcoal/30 text-brand-charcoal hover:bg-brand-charcoal/5">
                         {menu.action}
                       </Button>
-                    ) : null}
+                    ) : (
+                      <CotizarCTA preselect={{ servicio: menu.title === "Parrillas y piqueos" ? "piqueo" : "coctel" }} variant="outline" className="border-brand-charcoal/30 text-brand-charcoal hover:bg-brand-charcoal/5">
+                        Cotizar este formato
+                      </CotizarCTA>
+                    )}
                   </div>
                 </article>
               ))}
@@ -156,16 +191,35 @@ export default function Home() {
           <div className="mx-auto max-w-7xl space-y-7 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">Servicios adicionales</p>
-              <h2 className="section-title font-display font-extrabold text-brand-charcoal">Lo que puedes sumar</h2>
-              <p className="text-sm leading-relaxed text-brand-charcoal/80 sm:text-base">Selecciona solo lo que tu evento necesita.</p>
+              <h2 className="section-title font-display font-extrabold text-brand-charcoal">Arma el evento que necesitas</h2>
+              <p className="text-sm leading-relaxed text-brand-charcoal/80 sm:text-base">
+                Cada servicio se puede agregar directamente a tu cotización.
+              </p>
             </div>
-            <ul className="grid grid-cols-2 gap-3 text-sm font-semibold text-brand-charcoal sm:grid-cols-3 lg:grid-cols-6" role="list">
-              {productionServices.map((service) => (
-                <li key={service} className="rounded-xl border border-brand-charcoal/10 bg-brand-charcoal/[0.03] px-4 py-4 text-center">
-                  {service}
-                </li>
+
+            <Carousel ariaLabel="Servicios adicionales" gridColsClassName="md:grid-cols-3">
+              {serviciosAdicionalesMedia.map((service) => (
+                <article key={service.key} className="overflow-hidden rounded-2xl border border-brand-charcoal/10 bg-white shadow-sm">
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={service.src.startsWith("/media/") ? mediaSrc(service.src) : service.src}
+                      alt={service.alt}
+                      fill
+                      sizes="(max-width: 767px) 85vw, 33vw"
+                      className="object-cover"
+                      style={"objectPosition" in service && service.objectPosition ? { objectPosition: service.objectPosition } : undefined}
+                    />
+                  </div>
+                  <div className="space-y-3 p-5">
+                    <h3 className="font-display text-xl font-bold text-brand-charcoal">{service.title}</h3>
+                    <p className="min-h-12 text-sm leading-relaxed text-brand-charcoal/75">{service.desc}</p>
+                    <CotizarCTA preselect={{ servicio: service.key }} variant="outline" className="w-full border-brand-charcoal/30 text-brand-charcoal hover:bg-brand-charcoal/5">
+                      Agregar a mi cotización
+                    </CotizarCTA>
+                  </div>
+                </article>
               ))}
-            </ul>
+            </Carousel>
           </div>
         </section>
 
