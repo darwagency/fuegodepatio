@@ -1,40 +1,40 @@
 import React from "react";
 import Image from "next/image";
+import { brandAssets } from "@/data/media";
 
 export default function Footer() {
   return (
-    <>
     <footer
       id="contacto"
-      className="bg-brand-dark text-brand-beige border-t border-brand-beige/10 py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-brand-charcoal text-brand-cream border-t border-brand-cream/10 py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Brand Info */}
         <div className="space-y-4">
           <div>
             <Image
-              src="/logo-fuego.png"
+              src={brandAssets.logoClaro}
               alt="Fuego de Patio"
-              width={1024}
-              height={973}
-              style={{ height: "6rem", width: "auto" }}
+              width={3544}
+              height={1878}
+              style={{ height: "4.5rem", width: "auto" }}
               className="object-contain"
             />
           </div>
-          <p className="text-sm text-brand-beige/70 leading-relaxed max-w-sm">
+          <p className="text-sm text-brand-cream/70 leading-relaxed max-w-sm">
             Banquetería a fuego vivo y producción de eventos en la Región del Biobío y alrededores.
           </p>
         </div>
 
         {/* Contact Info */}
         <div className="space-y-4">
-          <h2 className="text-brand-orange font-display font-bold text-xs uppercase tracking-wider">
+          <h2 className="text-brand-gold font-display font-bold text-xs uppercase tracking-wider">
             Contacto
           </h2>
-          <ul className="space-y-3 text-sm text-brand-beige/80">
+          <ul className="space-y-3 text-sm text-brand-cream/80">
             <li className="flex items-center gap-3">
               <svg
-                className="w-5 h-5 text-brand-orange shrink-0"
+                className="w-5 h-5 text-brand-gold shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -48,15 +48,15 @@ export default function Footer() {
                 />
               </svg>
               <div>
-                <span className="font-semibold block text-xs text-brand-beige/50">Teléfono y WhatsApp</span>
-                <a href="tel:+56965252532" className="hover:text-brand-orange transition-colors">
+                <span className="font-semibold block text-xs text-brand-cream/50">Teléfono y WhatsApp</span>
+                <a href="tel:+56965252532" className="hover:text-brand-gold transition-colors">
                   +56 9 6525 2532
                 </a>
               </div>
             </li>
             <li className="flex items-center gap-3">
               <svg
-                className="w-5 h-5 text-brand-orange shrink-0"
+                className="w-5 h-5 text-brand-gold shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -70,15 +70,15 @@ export default function Footer() {
                 />
               </svg>
               <div>
-                <span className="font-semibold block text-xs text-brand-beige/50">Correo</span>
-                <a href="mailto:fuego.de.patio@gmail.com" className="hover:text-brand-orange transition-colors">
+                <span className="font-semibold block text-xs text-brand-cream/50">Correo</span>
+                <a href="mailto:fuego.de.patio@gmail.com" className="hover:text-brand-gold transition-colors">
                   fuego.de.patio@gmail.com
                 </a>
               </div>
             </li>
             <li className="flex items-center gap-3">
               <svg
-                className="w-5 h-5 text-brand-orange shrink-0"
+                className="w-5 h-5 text-brand-gold shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -92,19 +92,19 @@ export default function Footer() {
                 />
               </svg>
               <div>
-                <span className="font-semibold block text-xs text-brand-beige/50">Instagram</span>
+                <span className="font-semibold block text-xs text-brand-cream/50">Instagram</span>
                 <a
                   href="https://instagram.com/fuego.de.patio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-brand-orange transition-colors"
+                  className="hover:text-brand-gold transition-colors"
                 >
                   @fuego.de.patio
                 </a>
               </div>
             </li>
-            <li className="pt-2 flex items-start gap-3">
-              <div className="shrink-0 bg-white p-2 rounded-xl border border-brand-beige/10">
+            <li className="hidden pt-2 md:flex items-start gap-3">
+              <div className="shrink-0 bg-white p-2 rounded-xl border border-brand-cream/10">
                 <Image
                   src="/images/qr_instagram.png"
                   alt="Código QR de Instagram de Fuego de Patio"
@@ -114,8 +114,8 @@ export default function Footer() {
                 />
               </div>
               <div className="self-center">
-                <span className="font-semibold block text-xs text-brand-beige/50">Síguenos</span>
-                <p className="text-[10px] text-brand-beige/70 leading-relaxed">
+                <span className="font-semibold block text-xs text-brand-cream/50">Síguenos</span>
+                <p className="text-[10px] text-brand-cream/70 leading-relaxed">
                   Escanea para ver fotos y videos en tiempo real de nuestros eventos.
                 </p>
               </div>
@@ -125,33 +125,17 @@ export default function Footer() {
 
         {/* Coverage */}
         <div className="space-y-4">
-          <h2 className="text-brand-orange font-display font-bold text-xs uppercase tracking-wider">
+          <h2 className="text-brand-gold font-display font-bold text-xs uppercase tracking-wider">
             Cobertura
           </h2>
-          <p className="text-sm text-brand-beige/80 leading-relaxed">
+          <p className="text-sm text-brand-cream/80 leading-relaxed">
             Región del Biobío y alrededores, Chile
           </p>
-          <div className="text-xs text-brand-beige/50 pt-6 border-t border-brand-beige/5 mt-4">
+          <div className="text-xs text-brand-cream/50 pt-6 border-t border-brand-cream/5 mt-4">
             &copy; {new Date().getFullYear()} Fuego de Patio. Todos los derechos reservados.
           </div>
         </div>
       </div>
     </footer>
-
-      {/* Agency credit bar */}
-      <div className="w-full bg-brand-dark border-t border-brand-beige/10 py-3 px-4 text-center">
-        <p className="text-xs text-brand-beige/60">
-          Sitio web desarrollado por{" "}
-          <a
-            href="https://darw.cl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-brand-beige/80 hover:text-brand-orange transition-colors"
-          >
-            Agencia Darw
-          </a>
-        </p>
-      </div>
-    </>  
   );
 }

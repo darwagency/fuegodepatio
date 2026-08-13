@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/audit-screens
 
 # next.js
 /.next/
@@ -29,6 +30,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+dev-server*.log
+
+# Source material is kept locally; production-ready assets are in /public.
+/FUEGO DE PATIO - TODO EL MATERIAL GRAFICO/
 
 # env files (can opt-in for committing if needed)
 .env*

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
+import { mediaSrc } from "@/data/media";
 
 interface ImageItem {
   src: string;
@@ -10,128 +11,114 @@ interface ImageItem {
 
 interface ImageCarouselProps {
   images: ImageItem[];
-  aspectRatio?: string; // e.g., "aspect-video", "aspect-[4/3]"
+  ariaLabel?: string;
+  aspectRatio?: string;
   className?: string;
+  sizes?: string;
 }
 
 export default function ImageCarousel({
   images,
+  ariaLabel = "Galería de imágenes",
   aspectRatio = "aspect-video",
   className = "",
+  sizes = "(max-width: 767px) 100vw, 50vw",
 }: ImageCarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      if (clientWidth > 0) {
-        const index = Math.round(scrollLeft / clientWidth);
-        setActiveIndex(index);
-      }
-    }
+  const updateActiveIndex = () => {
+    const carousel = scrollRef.current;
+
+    if (!carousel || carousel.clientWidth === 0) return;
+
+    setActiveIndex(Math.round(carousel.scrollLeft / carousel.clientWidth));
   };
 
-  const scrollTo = (index: number) => {
-    if (scrollRef.current) {
-      const { clientWidth } = scrollRef.current;
-      scrollRef.current.scrollTo({
-        left: index * clientWidth,
-        behavior: "smooth",
-      });
-      setActiveIndex(index);
-    }
+  const goTo = (index: number) => {
+    const carousel = scrollRef.current;
+
+    if (!carousel) return;
+
+    carousel.scrollTo({
+      left: index * carousel.clientWidth,
+      behavior: "smooth",
+    });
   };
 
-  const next = () => {
-    const nextIndex = (activeIndex + 1) % images.length;
-    scrollTo(nextIndex);
-  };
-
-  const prev = () => {
-    const prevIndex = (activeIndex - 1 + images.length) % images.length;
-    scrollTo(prevIndex);
-  };
-
-  useEffect(() => {
-    const ref = scrollRef.current;
-    if (ref) {
-      ref.addEventListener("scroll", handleScroll);
-    }
-    return () => {
-      if (ref) {
-        ref.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
+  const previous = () => goTo((activeIndex - 1 + images.length) % images.length);
+  const next = () => goTo((activeIndex + 1) % images.length);
 
   return (
-    <div className={`relative group overflow-hidden rounded-[1.25rem] shadow-lg border border-brand-dark/10 bg-brand-dark ${className}`}>
-      {/* Scroll container */}
+    <section
+      aria-label={ariaLabel}
+      aria-roledescription="carrusel"
+      className={`relative group overflow-hidden rounded-[1.25rem] border border-brand-charcoal/10 bg-brand-charcoal shadow-lg ${className}`}
+    >
       <div
         ref={scrollRef}
-        className={`flex overflow-x-auto snap-x snap-mandatory no-scrollbar w-full ${aspectRatio}`}
-        style={{ scrollbarWidth: "none" }}
+        className={`flex w-full snap-x snap-mandatory overflow-x-auto no-scrollbar ${aspectRatio}`}
+        onScroll={updateActiveIndex}
       >
-        {images.map((img, idx) => (
+        {images.map((image, index) => (
           <div
-            key={idx}
-            className="w-full h-full shrink-0 snap-start snap-always relative"
+            key={image.src}
+            className="relative h-full w-full shrink-0 snap-start snap-always"
+            aria-hidden={activeIndex !== index}
           >
             <Image
-              src={img.src}
-              alt={img.alt}
+            src={mediaSrc(image.src)}
+              alt={image.alt}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 hover:scale-105"
-              loading={idx === 0 ? "eager" : "lazy"}
+              sizes={sizes}
+              className="object-cover"
             />
           </div>
         ))}
       </div>
 
-      {/* Navigation Buttons (Only if multiple images) */}
       {images.length > 1 && (
         <>
           <button
             type="button"
-            onClick={prev}
+            onClick={previous}
             aria-label="Ver imagen anterior"
-            className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-brand-dark/60 text-brand-beige border border-brand-beige/10 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity duration-300 hover:bg-brand-orange hover:text-brand-dark cursor-pointer z-10"
+            className="absolute left-3 top-1/2 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-charcoal/75 text-brand-cream opacity-100 transition-colors hover:bg-brand-gold hover:text-brand-charcoal md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="m15 19-7-7 7-7" />
             </svg>
           </button>
           <button
             type="button"
             onClick={next}
             aria-label="Ver imagen siguiente"
-            className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-brand-dark/60 text-brand-beige border border-brand-beige/10 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity duration-300 hover:bg-brand-orange hover:text-brand-dark cursor-pointer z-10"
+            className="absolute right-3 top-1/2 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-charcoal/75 text-brand-cream opacity-100 transition-colors hover:bg-brand-gold hover:text-brand-charcoal md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="m9 5 7 7-7 7" />
             </svg>
           </button>
-
-          {/* Dots Indicator */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
-            {images.map((_, idx) => (
+          <div className="absolute bottom-2.5 left-1/2 z-10 flex -translate-x-1/2 items-center rounded-full bg-brand-charcoal/60 px-1">
+            {images.map((image, index) => (
               <button
-                key={idx}
+                key={image.src}
                 type="button"
-                onClick={() => scrollTo(idx)}
-                aria-label={`Ir a la imagen ${idx + 1}`}
-                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIndex === idx
-                    ? "bg-brand-orange w-4"
-                    : "bg-brand-beige/50 hover:bg-brand-beige"
-                }`}
-              />
+                onClick={() => goTo(index)}
+                aria-label={`Ir a la imagen ${index + 1} de ${images.length}`}
+                aria-current={activeIndex === index}
+                className="flex size-8 items-center justify-center"
+              >
+                <span
+                  className={`block h-1.5 rounded-full transition-all ${
+                    activeIndex === index ? "w-4 bg-brand-gold" : "w-1.5 bg-brand-cream/60"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 }

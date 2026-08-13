@@ -68,7 +68,7 @@ export default function Carousel({ children, ariaLabel, gridColsClassName }: Car
           onClick={() => scroll("left")}
           disabled={!showPrev}
           aria-label="Ver elementos anteriores"
-          className="flex items-center justify-center w-10 h-10 rounded-full border border-brand-dark/20 text-brand-dark disabled:opacity-30 disabled:cursor-not-allowed hover:bg-brand-dark/5 active:bg-brand-dark/10 transition-colors"
+          className="flex size-11 items-center justify-center rounded-full border border-brand-dark/20 text-brand-dark transition-colors hover:bg-brand-dark/5 active:bg-brand-dark/10 disabled:cursor-not-allowed disabled:opacity-30"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -79,7 +79,7 @@ export default function Carousel({ children, ariaLabel, gridColsClassName }: Car
           onClick={() => scroll("right")}
           disabled={!showNext}
           aria-label="Ver más elementos"
-          className="flex items-center justify-center w-10 h-10 rounded-full border border-brand-dark/20 text-brand-dark disabled:opacity-30 disabled:cursor-not-allowed hover:bg-brand-dark/5 active:bg-brand-dark/10 transition-colors"
+          className="flex size-11 items-center justify-center rounded-full border border-brand-dark/20 text-brand-dark transition-colors hover:bg-brand-dark/5 active:bg-brand-dark/10 disabled:cursor-not-allowed disabled:opacity-30"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
