@@ -3,12 +3,16 @@ import Image from "next/image";
 import { brandAssets } from "@/data/media";
 
 export default function Footer() {
+  const darwWhatsAppUrl =
+    "https://wa.me/56926341222?text=Hola%20Darw%2C%20vengo%20desde%20la%20web%20de%20Fuego%20de%20Patio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20mi%20proyecto.";
+
   return (
-    <footer
-      id="contacto"
-      className="bg-brand-charcoal text-brand-cream border-t border-brand-cream/10 py-12 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <>
+      <footer
+        id="contacto"
+        className="bg-brand-charcoal text-brand-cream border-t border-brand-cream/10 py-12 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Brand Info */}
         <div className="space-y-4">
           <div>
@@ -135,7 +139,37 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Fuego de Patio. Todos los derechos reservados.
           </div>
         </div>
-      </div>
-    </footer>
+        </div>
+      </footer>
+
+      <aside className="border-t border-brand-charcoal/10 bg-brand-cream px-4 py-6 sm:px-6 lg:px-8" aria-label="Desarrollo web">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">Desarrollo web</p>
+            <p className="mt-1 font-display text-xl font-bold text-brand-charcoal">
+              Esta web fue desarrollada por Agencia Darw.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <a
+              href="https://darw.cl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-brand-charcoal px-5 text-sm font-semibold text-brand-cream transition-colors hover:bg-brand-charcoal/90 focus:outline-none focus:ring-4 focus:ring-brand-gold/30"
+            >
+              Visitar web de la agencia
+            </a>
+            <a
+              href={darwWhatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-brand-gold px-5 text-sm font-semibold text-brand-charcoal transition-colors hover:bg-brand-gold/15 focus:outline-none focus:ring-4 focus:ring-brand-gold/30"
+            >
+              Contacto directo al WhatsApp
+            </a>
+          </div>
+        </div>
+      </aside>
+    </>
   );
 }
